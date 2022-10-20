@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "rus");
+
+	double a, b, c;
+	cout << "Введите коффициент а, b и с ";
+	cin >> a >> b >> c;
+	
+	double d = b * b - 4. * a * c;
+	
+	if (d > 0) {
+		cout << "Корни " << (-b + sqrt(d)) / (2. * a)<< " " << (-b - sqrt(d)) / (2. * a);
+	}
+	else if (d == 0) {
+		cout << "Корень " << -(b / (2. * a));
+	}
+	else {
+		cout << "Нет корней";
+	}
+	
+	return 0;
+}
