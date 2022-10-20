@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "rus");
+
+	int a;
+	cout << "Введите двухзначное число ";
+	cin >> a;
+
+	int b = a / 10; //первая цифра
+	int c = a % 10; //вторая цифра
+	cout << "Сумма " << b + c << endl;
+	cout << "Произведение " << b * c;
+
+	return 0;
+}
