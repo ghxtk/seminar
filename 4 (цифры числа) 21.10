@@ -8,10 +8,17 @@ int main() {
 	cout << "Введите двухзначное число ";
 	cin >> a;
 
-	int b = a / 10; //первая цифра
-	int c = a % 10; //вторая цифра
-	cout << "Сумма " << b + c << endl;
-	cout << "Произведение " << b * c;
-
+	int s = (a / 10) + (a % 10); //сумма
+	int p = (a / 10) * (a % 10); //произведение
+	if(s>p){
+           for(int i = p; i <= s; i++){
+               cout<<i<<endl;
+           }
+        }
+        else{
+            for(int i = s; i <= p; i++){
+               cout<<i<<endl;
+           }
+        }
 	return 0;
 }
