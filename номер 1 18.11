@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double st(double x) {
+	return sqrt(x * 4 / sqrt(3));
+}
+
+double gip(double y) {
+	return sqrt(pow(y, 2) + pow(y, 2));
+}
+
+int main() {
+	setlocale(LC_ALL, "rus");
+	double s;
+	cout << "Введите площадь рс треугольника ";
+	cin >> s;
+	double a = st(s);
+	double g = gip(a);
+	double p = a + a + g;
+	cout << "Сторона " << a << endl;
+	cout << "Гипотенуза " << g << endl;
+	cout << "Периметр прямоугольного треугольника " << p;
+	return 0;
+}
