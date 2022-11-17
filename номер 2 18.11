@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double power(double x, double y,double z) {
+	return (6, 672 * pow(10, -11) * x * y) / pow(z, 2);
+}
+
+int main() {
+	double m1, m2, m3, r12, r23, r13;
+	cin >> m1 >> m2 >> m3 >> r12 >> r23 >> r13;
+	double p1 = power(m1, m2, r12);
+	double p2 = power(m2, m3, r23);
+	double p3 = power(m1, m3, r13);
+	double pm1 = max(p1, p2);
+	double pm2 = max(p3, min(p1, p2));
+	cout << pm1 << " " << pm2;
+	return 0;
+}
