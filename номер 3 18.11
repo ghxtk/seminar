@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+void mo(int &x) {
+	if (x != 0)
+		cout << -x;
+	else
+		cout << "error";
+}
+
+int main() {
+	int a;
+	cin >> a;
+	mo(a);
+	return 0;
+}
