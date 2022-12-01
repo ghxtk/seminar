@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n = 1;
+	double x, e, s = 0;
+	cout << "x "; cin >> x;
+	cout << "e ";  cin >> e;
+	double chisl = x*x;
+	double znam = 2;
+
+	double a = n * (n - 1) * (chisl / znam);
+	if (n == 1) {
+		chisl *= x * x;
+		znam *= (2 * n + 1) * (2 * n + 2);
+		n++;
+		a = n * (n - 1) * (chisl / znam);
+	}
+	while (abs(a) >= e) {
+		s += a;
+		chisl *= x * x;
+		znam *= (2 * n + 1) * (2 * n + 2);
+		n++;
+		a = n * (n - 1) * (chisl / znam);
+	}
+	cout << s;
+	return 0;
+}
