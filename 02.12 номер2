@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	double x; cin >> x;
+	int n; cin >> n;
+	double a = pow(x, 3);
+	double sum = a;
+
+	for (int i = 1; i < n; i++) {
+		a *= (i + 1) * x * x;
+		sum += a;
+	}
+	cout << sum;
+	return 0;
+}
