@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int rec(int *a, int n) {
+	if (n == 0) return 0;
+	else if (n == 1) return a[0];
+	else return a[n - 1] * rec(a, n - 1);
+}
+int main() {
+	int n; cin >> n;
+	int* a = new int[n];
+	for (int i = 0; i < n; i++)
+		cin >> a[i];
+	int p = rec(a, n);
+	cout << p;
+	delete[] a;
+	return 0;
+}
