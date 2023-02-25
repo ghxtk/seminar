@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int rec(int n) {
+	if (n == 1 || n == 2)
+		return 0;
+	if (n == 3)
+		return 1;
+	return rec(n - 1) + rec(n - 2) + rec(n - 3);
+}
+int main() {
+	int c; cin >> c;
+	cout << rec(c) << " ";
+	return 0;
+}
