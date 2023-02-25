@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int rec(int a, int d) {
+	if (d == 0) return a;
+	return rec(d, a % d);
+}
+int main() {
+	int a, b; cin >> a >> b;
+	cout << rec(a, b);
+	return 0;
+}
