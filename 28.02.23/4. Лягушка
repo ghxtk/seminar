@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int rec(int a, int n) {
+    if (a > n)
+        return 0;
+    if (a == n)
+        return 1;
+    if (a < n)
+        return rec(a + 3, n) + rec(a + 5, n);
+}
+
+int main(){
+    int n, a = 0;
+    cin >> n;
+    cout << rec(a, n);
+    return 0;
+}
