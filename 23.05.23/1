@@ -1,0 +1,63 @@
+#include <iostream>
+#include <vector>
+#include <list>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "ru");
+    list<int> l;
+    vector<int> v;
+    int n, m, k, tmp;
+    // A - делать с помощью list, так как вставка элементов в листе происходит за O(1)
+    cout << "A\n";
+    cin >> n;
+    cout << "Эл-тов для списка " << n << "\n";
+    for (int i = 0; i < n; i++) {
+        cin >> tmp;
+        l.push_back(tmp);
+    }
+    m = tmp;
+    auto t = l.begin();
+    for (auto it = l.begin(); it != l.end(); it++) {
+        if (*it < m) {
+            m = *it;
+            t = it;
+        }
+    }
+    l.insert(t, 0);
+    l.insert(++t, 0); 
+    
+    for (auto x : l)
+        cout << x << " ";
+    cout << endl;
+    // Таким образом, временная оценка времени - O(n)
+    // Так как поиск минимального происходит за O(n) и ввод листа за O(n)
+
+    cout << "B\n";
+    // Здесь используем вектор, так как в векторе обращение к элементу происходит за O(1)
+    cin >> n;
+    cout << "Эл-тов в веторе " << n << "\n";
+    bool flag = true;
+    for (int i = 0; i < n; i++) {
+        cin >> tmp;
+        flag *= (tmp >= 0);
+        v.push_back(tmp);
+    }
+    if (n % 2 == 0) {
+        cout << "Элементов четное кол-во\n";
+        exit(0);
+    }
+    else if (flag) {
+        cout << "Нет максимального отрицательного эл-та\n";
+        exit(0);
+    }
+    int mid = n / 2, mx = -100000;
+    for (int i = 0; i < n; i++)
+        if (v[i] < 0) mx = max(mx, v[i]);
+    v[mid] = mx;
+    for (auto x : v)
+        cout << x << " ";
+    // Вся программа работает за O(n)
+    // Ввод массива - O(n), поиск максимального отрицательного за O(n)
+    
+}
